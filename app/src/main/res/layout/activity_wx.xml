@@ -5,21 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="org.chzz.demo.WxActivity">
+  >
 
-    <include  layout="@layout/common_toolbar"></include>
+    <include layout="@layout/common_toolbar"></include>
 
 
     <android.support.v4.view.ViewPager
-        android:layout_weight="1"
         android:id="@+id/viewPage"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+        <org.chzz.demo.ChangeColorIconWithText
+            android:id="@+id/id_indicator_one"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            app:icon="@mipmap/ic_menu_start_conversation"
+            app:name="@string/app_name"
+            app:textSize="12sp"
+            app:color="#ff45c01a" />
 
+        <org.chzz.demo.ChangeColorIconWithText
+            android:id="@+id/id_indicator_two"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            app:icon="@mipmap/ic_menu_friendslist"
+            app:name="@string/tab_contact"
+            app:textSize="12sp"
+            app:color="#ff45c01a" />
+
+        <org.chzz.demo.ChangeColorIconWithText
+            android:id="@+id/id_indicator_three"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            app:icon="@mipmap/ic_menu_emoticons"
+            app:name="@string/tab_found"
+            app:textSize="12sp"
+            app:color="#ff45c01a" />
+
+        <org.chzz.demo.ChangeColorIconWithText
+            android:id="@+id/id_indicator_four"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            app:icon="@mipmap/ic_menu_allfriends"
+            app:name="@string/tab_me"
+            app:textSize="12sp"
+            app:color="#ff45c01a" />
 
     </LinearLayout>
 </LinearLayout>
