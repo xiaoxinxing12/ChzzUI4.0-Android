@@ -1,20 +1,46 @@
 package org.chzz.demo;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.Menu;
+import android.view.ViewConfiguration;
 
-public class WxActivity extends FragmentActivity {
+import java.lang.reflect.Field;
+
+public class WxActivity  extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wx);
+       // setOverflowButtonAlways();
+         Toolbar mToolbar= (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(mToolbar);
+
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return  super.onCreateOptionsMenu(menu);
+    }
+    private void setOverflowButtonAlways()
+    {
+        try
+        {
+            ViewConfiguration config = ViewConfiguration.get(this);
+            Field menuKey = ViewConfiguration.class
+                    .getDeclaredField("sHasPermanentMenuKey");
+            menuKey.setAccessible(true);
+            menuKey.setBoolean(config, false);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 }
